@@ -1,6 +1,15 @@
 use crate::runner::rsprinter;
 use crate::runner::rstrait;
 
+#[derive(Clone, Copy)]
+struct SomeData {
+    a: u64,
+}
+
+fn mutate_struct(mut data: SomeData) {
+    data.a = 2;
+}
+
 fn take_my_vec(my_vec: &mut Vec<i32>) {
     my_vec.push(5);
 }
@@ -16,5 +25,11 @@ impl rstrait::Runner for RsOwnership {
         for one in our_vec.iter() {
             println!("{}", one);
         }
+
+        let something: SomeData = SomeData{ a: 1 };
+        mutate_struct(something);
+        mutate_struct(something.clone());
+        mutate_struct(something);
+        mutate_struct(something.clone());
     }
 }

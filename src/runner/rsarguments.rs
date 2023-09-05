@@ -13,7 +13,7 @@ impl rstrait::Runner for RsArguments {
 				println!("{}", arg);
 				continue;
 			}
-			rsprinter::print_mid();
+			rsprinter::print_lines();
 			match arg.parse::<i64>() {
 				Ok(x) => {
 					println! ("x:? = {:?}", x);

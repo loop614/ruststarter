@@ -38,7 +38,6 @@ impl rstrait::Runner for RsType {
 		}
 
 		let z: f32 = x + y;
-		println!("thats what i thought");
 		println!("z = {}", z);
 	}
 }

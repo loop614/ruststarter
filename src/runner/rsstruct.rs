@@ -8,6 +8,7 @@ struct RsI8 {
     _i: i8
 }
 
+#[derive(Debug)]
 pub struct RsStruct {
     pub a: u64,
     pub b: i64,
@@ -20,5 +21,6 @@ impl rstrait::Runner for RsStruct {
         println!("Struct with one char has {} bytes", mem::size_of::<RsChar>());
         println!("i8 has {} bytes", mem::size_of::<i8>());
         println!("Struct with one i8 has {} bytes", mem::size_of::<RsI8>());
+        dbg!(RsStruct{ a: 1, b: 2 });
     }
 }
