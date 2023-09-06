@@ -3,10 +3,10 @@ CARGO := cargo
 CARGO_WATCH := cargo watch
 
 run:
-	$(CARGO) run 1 2
+	RUST_BACKTRACE=full $(CARGO) run 1 2
 
 watch:
-	$(CARGO_WATCH) -- cargo run
+	$(CARGO_WATCH) -c -w src -x run 
 
 run_rc:
 	$(RUST) src/main.rs && ./main 1 2

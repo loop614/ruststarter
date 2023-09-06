@@ -9,6 +9,7 @@ mod rsstruct;
 mod rsmacro;
 mod rsownership;
 mod rsfuture;
+mod rsrequest;
 
 pub fn run() {
     let runners: Vec<Box<dyn Runner>> = vec![
@@ -26,5 +27,6 @@ pub fn run() {
 }
 
 pub async fn async_run() {
+    _ = rsrequest::RsRequest {}.async_run().await.expect("TODO: panic message");
     rsfuture::RsFuture {}.async_run().await;
 }
