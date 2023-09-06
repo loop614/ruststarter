@@ -1,5 +1,9 @@
+extern crate core;
+
 mod runner;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     runner::run();
+    runner::async_run().await;
 }

@@ -8,6 +8,7 @@ mod rsprinter;
 mod rsstruct;
 mod rsmacro;
 mod rsownership;
+mod rsfuture;
 
 pub fn run() {
     let runners: Vec<Box<dyn Runner>> = vec![
@@ -22,4 +23,8 @@ pub fn run() {
     for runner in runners.iter() {
         runner.run();
     }
+}
+
+pub async fn async_run() {
+    rsfuture::RsFuture {}.async_run().await;
 }

@@ -16,6 +16,9 @@ $ cargo build && ./main
 ```console
 $ cargo run
 ```
+```console
+$ cargo watch -- cargo run
+```
 
 ### Special Thanks to
 - [Alexey](https://github.com/rexim)
