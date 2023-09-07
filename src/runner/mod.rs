@@ -10,6 +10,8 @@ mod rsmacro;
 mod rsownership;
 mod rsfuture;
 mod rsrequest;
+mod rsresult;
+mod rssmart;
 
 pub fn run() {
     let runners: Vec<Box<dyn Runner>> = vec![
@@ -19,6 +21,8 @@ pub fn run() {
         Box::new(rsstruct::RsStruct{ a: 1, b: 2 }),
         Box::new(rsmacro::RsMacro),
         Box::new(rsownership::RsOwnership),
+        Box::new(rsresult::RsResult),
+        Box::new(rssmart::RsSmart),
     ];
 
     for runner in runners.iter() {
