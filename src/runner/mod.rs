@@ -12,6 +12,7 @@ mod rsfuture;
 mod rsrequest;
 mod rsresult;
 mod rssmart;
+mod rsjson;
 
 pub fn run() {
     let runners: Vec<Box<dyn Runner>> = vec![
@@ -23,6 +24,7 @@ pub fn run() {
         Box::new(rsownership::RsOwnership),
         Box::new(rsresult::RsResult),
         Box::new(rssmart::RsSmart),
+        Box::new(rsjson::RsJson),
     ];
 
     for runner in runners.iter() {
